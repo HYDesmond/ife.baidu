@@ -1,0 +1,53 @@
+/* *,body,h2,p,ul,li{
+	margin:0;
+	padding:0;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+label[for="toggle"]{
+	Set a large font-size to make the icon nice and big.
+	font-size: 3rem;
+	Set position absolute on it, and used top and right to position it nicely in the top-right corner.
+	position:absolute;
+	top: 0;
+	right:0;
+	Set a z-index of 1 on it — this is so that when the info panel is styled and shown, it doesn't cover up the icon; instead the icon will sit on top of it so it can be pressed again to hide the info pane.
+	z-index: 1;
+	Used the cursor property to change the mouse cursor when it is hovering over the icon to a hand pointer (like the one you see when links are hovered over), as an extra visual clue to users that the icon does something interesting.
+	cursor:pointer;
+}
+
+sets position absolute on the actual checkbox <input> element, and hides it off the top of the screen. We don't actually want to see this on our UI.
+input[type="checkbox"]{
+	position:absolute;
+	top:-100px;
+}
+
+Now it's time to style the actual sliding panel itself. Add the following rule to the bottom of your CSS:
+
+aside{
+	set background-color and color on the info box.
+	background:#a60000;
+	color:white;
+
+	set a fixed width on the panel, and make its height the entire height of the browser viewport.
+	width:340px;
+	height:98%;
+	padding:10px 1%;
+
+	set position: fixed; We glue it to the top of the viewport, and set it so that by default it is offscreen to the right.
+	position: fixed;
+	top:0;
+	right:-370px;
+
+	transition,简单的效果
+	transition:0.6s all;
+}
+
+input[type="checkbox"]:checked+aside{
+	right:0;
+} */
+
