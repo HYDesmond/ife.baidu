@@ -1,0 +1,62 @@
+*,body{
+	margin:0;
+	padding:0;
+}
+/*设置header跟footer样式，宽度100%，最低高低100px*/
+.header,.footer{
+	width:100%;
+	background:lightblue;
+	min-height:100px;
+}
+
+
+/*
+1.设置容器的padding值，左右值为class="left"跟class="right"的div的width值
+2.设置overflow已清除浮动带来的影响
+*/
+.container{
+	padding:0 200px 0 200px;
+	overflow:hidden;
+}
+/*
+1、将middle,left,right共同样式写在一起
+2、设置为浮动，最低高度为200px；
+3、设置position;
+*/
+.container .middle,.container .left,.container .right{
+	float:left;
+	position:relative;
+	min-height:200px;
+}
+/*设置middle的width:100%,背景颜色*/
+.container .middle{
+	width:100%;
+	background:#a60000;
+
+}
+
+
+/*
+1、设置left的width:200px
+2、设置margin-left，与宽度值一致，负值
+3、设置left，与宽度值一致，负值
+*/
+.container .left{
+	width:200px;
+	margin-left:-100%;
+	left:-200px;
+	background:darkslategray;
+}
+
+
+/*
+1、设置right的width:200px
+2、设置margin-left，与宽度值一致，负值
+3、设置right，与宽度值一致，负值
+*/
+.container .right{
+	width:200px;
+	margin-left:-200px;
+	right:-200px;
+	background:lightyellow;
+}
