@@ -1,0 +1,170 @@
+/*<!--清除默认样式-->*/
+*,body,div{
+	margin:0;
+	padding:0;
+}
+
+/*<!--设置通用样式-->*/
+.clearFix{
+	*zoom:1;
+}
+
+.clearFix:after{
+	content:'';
+	clear:both;
+	display:table;
+}
+
+/*<!--header-->*/
+.header{
+	width:100%;
+	height:82px;
+	background:#333333;
+	overflow:hidden;
+}
+
+.header .left{
+	float:left;
+}
+.header .right{
+	float:right;
+}
+.header span{
+	display:inline-block;
+	color:white;
+	font-size:20px;
+	margin-left:206px;
+	margin-top:20px;
+}
+
+.header ul{
+	list-style: none;
+	font-size:14px;
+	margin-right:180px;
+	margin-top:12px;
+}
+
+.header ul li{
+	float:left;
+	margin-left:8px;
+}
+.header li a{
+	color:white;
+}
+
+/*<!--banner-->*/
+/*为实现hover能实现自下向上height增加，给li设置position*/
+.nav{
+	width:100%;
+	height:300px;
+	background:#66bb33;
+	position:relative;
+}
+.nav ul{
+	list-style: none;
+	width: 132px;
+	position:absolute;
+	right:182px;
+	bottom:10px;
+}
+.nav ul li{
+	float:left;
+	position: absolute;
+	bottom: 0;
+	width:28px;
+	height:34px;
+	line-height:34px;
+	border:1px solid gray;
+	margin-left:5px;
+	text-align: center;
+	background:#b2dd99;
+}
+.nav ul li:nth-of-type(1){
+	left:5px;
+}
+.nav ul li:nth-of-type(2){
+	left:38px;
+}
+.nav ul li:nth-of-type(3){
+	left:71px;
+}
+.nav ul li:nth-of-type(4){
+	left:104px;
+}
+
+.nav .Nav-active,.nav ul li:hover{
+	height:50px;
+	line-height:50px;
+	background:white;
+	transition:0.6s all;
+}
+
+/*<!--panels选择面版-->*/
+.container .conBar{
+	width:100%;
+	height:70px;
+	border-bottom:1px solid gray;
+}
+.container .panels{
+	margin:0 0 0 206px;
+	width:960px;
+}
+.container .panels button{
+	margin:20px -8px 0 0; 
+	width:120px;
+	height:50px;
+	border:1px solid #ddd;/*通过设置新的border,去除button的默认样式*/
+    border-bottom: none; /*去除底部边框*/
+    border-radius:15px 15px 0 0;
+    background-color:#eeeeee;
+}
+/*移动上去更改样式*/
+.container .panels .Pan-active,.container .panels button:hover{
+	height:51px;
+	background:white;
+	padding-bottom:1px; /*遮盖底下的实线*/
+}
+
+
+/*<!--main-->*/
+.container .main{
+	margin-left:201px;
+}
+.container .row-1 div,.container .row-2 div,.container .row-3 div{
+	display: inline-block;
+	border:1px solid grey;
+	height:168px;
+	line-height: 168px;
+	text-align: center;
+	margin:5px;
+}
+.container .row-1 div:nth-of-type(1),.container .row-1 div:nth-of-type(2){
+	width:322px;
+}
+.container .row-1 div:nth-of-type(3){
+	width:280px;
+}
+
+.container .row-2 div{
+	width:226px;
+}
+
+.container .row-3 div{
+	width:304px;
+}
+
+
+/*<!--footer-->*/
+.footer{
+	width:100%;
+	height:120px;
+	background:#666666;
+	text-align:center;
+	margin-top:60px;
+}
+
+.footer p{
+	color:white;
+	padding-top:18px;
+	transition:0.6s all;
+}

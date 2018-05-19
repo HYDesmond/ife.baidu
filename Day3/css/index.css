@@ -1,0 +1,66 @@
+/*清除默认样式*/
+*,body,p,div{
+  margin:0px;
+  padding:0px;
+}
+a{
+  text-decoration:none;
+  font-size:36px;
+  color:black;
+}
+
+/*设置背景*/
+body{
+ background:#87b0a5 
+}
+
+/*页面样式*/
+
+/*page 1*/
+.main div{
+  text-align: center;
+  margin-top:10px;
+}
+.div1 p:nth-of-type(1) {
+  font-size:56px;
+}
+
+.div1 p:nth-of-type(2) ,.div1 p:nth-of-type(3) ,.div1 p:nth-of-type(4)  {
+  font-size:36px;
+  color:#fff;
+}
+
+div p:hover{
+  color:#fff;
+}
+div a:hover{
+  color:#fff;
+}
+img{
+  width:140px;
+  height:140px;
+  text-align:ceter;
+  margin: 0 auto;
+  border-radius:50%;
+}
+
+/*second page*/
+
+.div2{
+  display:none;
+}
+.div2 p{
+  font-size:68px;
+  margin-top:60px;
+  margin-bottom:100px;
+}
+.div2 ul{
+  display:inline;
+}
+.div2 ul li{
+  display:inline;
+  font-size:36px;
+  margin:0 26px 26px 0
+}
+
+
