@@ -17,7 +17,7 @@
 
 /*<!--header-->*/
 .header{
-	width:100%;
+	width:1349px;
 	height:82px;
 	background:#333333;
 	overflow:hidden;
@@ -55,7 +55,7 @@
 /*<!--banner-->*/
 /*为实现hover能实现自下向上height增加，给li设置position*/
 .nav{
-	width:100%;
+	width:1349px;
 	height:300px;
 	background:#66bb33;
 	position:relative;
@@ -101,7 +101,7 @@
 
 /*<!--panels选择面版-->*/
 .container .conBar{
-	width:100%;
+	width:1349px;
 	height:70px;
 	border-bottom:1px solid gray;
 }
@@ -156,7 +156,7 @@
 
 /*<!--footer-->*/
 .footer{
-	width:100%;
+	width:1349px;
 	height:120px;
 	background:#666666;
 	text-align:center;
