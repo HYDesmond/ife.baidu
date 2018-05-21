@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>A beautiful website</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div id="page-container">
+        <div id="column-app">
+            <ul id="app-list">
+                <li class="active">
+                    <h4>location app</h4>
+                </li>
+                <li>
+                    <h4>optimization app</h4>
+                </li>
+                <li>
+                    <h4>game app</h4>
+                </li>
+                <li id="add-app-btn">
+                </li>
+            </ul>
+            <ul class="tool">
+                <li class="app-icon"></li>
+                <li class="setting-icon"></li>
+            </ul>
+        </div>
+        <div id="column-menu">
+            <dl>
+                <dt>MENU
+                    <i class="setting-icon"></i>
+                </dt>
+                <dd>Overview
+                    <em class="num-tip">2</em>
+                </dd>
+                <dd>Sales</dd>
+                <dd>Your Staff</dd>
+                <dd>Analytics & Targeting</dd>
+                <dd>What’s New</dd>
+            </dl>
+            <dl>
+                <dt>YOUR PRODUCTS
+                    <i class="setting-icon"></i>
+                </dt>
+                <dd>
+                    <i class="fa fa-book"></i>Books</dd>
+                <dd>
+                    <i class="fa fa-video-camera"></i>Tutorials</dd>
+                <dd>
+                    <i class="fa fa-image"></i>Stocks</dd>
+                <dd>
+                    <i class="fa fa-bar-chart"></i>Infographics</dd>
+            </dl>
+            <dl>
+                <dt>DASHBOARD
+                    <i class="setting-icon"></i>
+                </dt>
+                <dd class="active">Messages
+                    <em class="num-tip">21</em>
+                </dd>
+                <dd>Connections</dd>
+                <dd>ntegrations
+                    <em class="warn-tip">!</em>
+                </dd>
+                <dd>Account Settings</dd>
+                <dd>App Settings</dd>
+            </dl>
+            <div id="goal-bar">
+                <p>
+                    <span>Monthly Goals</span>
+                    <span>$580 / $3200</span>
+                </p>
+                <div id="progress-bar">
+                    <span id="value-bar"></span>
+                </div>
+                <!-- <progress value="580" max="3200"></progress> -->
+            </div>
+        </div>
+        <div id="column-main">
+            <header id="column-main-header">
+                <h2>Message</h2>
+                <div class="user-info">
+                    <div class="avatar">
+                        <img src="img/timg.jpg" alt="Amy">
+                        <span class="status online-status">
+                            <span class="inner-circle">
+                                <span class="inner-inner-circle"></span>
+                            </span>
+                        </span>
+                    </div>
+                    <h1>Amy</h1>
+                    <span class="extra-info">Administrator</span>
+                    <i class="fa fa-angle-down"></i>
+                </div>
+            </header>
+            <div id="column-main-content">
+                <div id="column-friends">
+                    <form id="search-input" action="#">
+                        <input type="text" placeholder="Search">
+                        <i class="fa fa-search"></i>
+                    </form>
+                    <ul id="friends-list">
+                        <li class="active">
+                            <header class="user-info">
+                                <img src="img/timg4.jpg" alt="Amy">
+                                <h4>Bessie Berry</h4>
+                                <span class="extra-info">Twitter</span>
+                                <time>3m</time>
+                            </header>
+                            <div class="message-summary has-num-tip">
+                                <p>I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick,
+                                    and stable. It's not perfect, but I really don't have issues, as long as I keep track
+                                    of what I'm doing on it. </p>
+                                <em class="num-tip">21</em>
+                            </div>
+                        </li>
+                        <li>
+                            <header class="user-info">
+                                <img src="img/timg2.jpg" alt="Amy">
+                                <h4>Bessie Berry</h4>
+                                <span class="extra-info">Twitter</span>
+                                <time>8m</time>
+                            </header>
+                            <div class="message-summary">
+                                <p>I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. </p>
+                            </div>
+                        </li>
+                        <li>
+                            <header class="user-info">
+                                <img src="img/timg3.jpg" alt="Amy">
+                                <h4>Bessie Berry</h4>
+                                <span class="extra-info">Twitter</span>
+                                <time>Yesterday</time>
+                            </header>
+                            <div class="message-summary">
+                                <p>I pay for the 4Mb/sec down, 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively
+                                    quick, and stable. It's not perfect, but I really don't have issues, as long as I keep
+                                    track of what I'm doing on it. </p>
+                            </div>
+                        </li>
+                        <li>
+                            <header class="user-info">
+                                <img src="img/timg4.jpg" alt="Amy">
+                                <h4>Bessie Berry</h4>
+                                <span class="extra-info">Twitter</span>
+                                <time>Yesterday</time>
+                            </header>
+                            <div class="message-summary has-num-tip">
+                                <p>I pay for the 4Mb/sec down</p>
+                                <em class="num-tip">6</em>
+                            </div>
+                        </li>
+                        <li>
+                            <header class="user-info">
+                                <img src="img/timg2.jpg" alt="Amy">
+                                <h4>Bessie Berry</h4>
+                                <span class="extra-info">Twitter</span>
+                                <time>13 Jun</time>
+                            </header>
+                            <div class="message-summary">
+                                <p>I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick,
+                                    and stable. It's not perfect, but I really don't have issues, as long as I keep track
+                                    of what I'm doing on it. </p>
+                            </div>
+                        </li>
+                        <li>
+                            <header class="user-info">
+                                <img src="img/timg3.jpg" alt="Amy">
+                                <h4>Bessie Berry</h4>
+                                <span class="extra-info">Twitter</span>
+                                <time>13 Jun</time>
+                            </header>
+                            <div class="message-summary">
+                                <p>I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick,
+                                    and stable. It's not perfect, but I really don't have issues, as long as I keep track
+                                    of what I'm doing on it. </p>
+                            </div>
+                        </li>
+                        <li>
+                            <header class="user-info">
+                                <img src="img/timg4.jpg" alt="Amy">
+                                <h4>Bessie Berry</h4>
+                                <span class="extra-info">Twitter</span>
+                                <time>13 Jun</time>
+                            </header>
+                            <div class="message-summary has-num-tip">
+                                <p>I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick,
+                                    and stable. It's not perfect, but I really don't have issues, as long as I keep track
+                                    of what I'm doing on it. </p>
+                                <em class="num-tip">15</em>
+                            </div>
+                        </li>
+                        <li>
+                            <header class="user-info">
+                                <img src="img/timg2.jpg" alt="Amy">
+                                <h4>Bessie Berry</h4>
+                                <span class="extra-info">Twitter</span>
+                                <time>13 Jun</time>
+                            </header>
+                            <div class="message-summary">
+                                <p>I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick,
+                                    and stable. It's not perfect, but I really don't have issues, as long as I keep track
+                                    of what I'm doing on it. </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div id="column-messages">
+                    <header id="column-messages-header">
+                        <h3>Bessie Berry</h3>
+                        <ul id="tool-bar">
+                            <li>
+                                <i class="fa fa-user-plus"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-upload"></i>
+                            </li>
+                            <li>
+                                <i class="fa fa-trash-o"></i>
+                            </li>
+                        </ul>
+                        <ul id="page-bar">
+                            <li>1 of 28</li>
+                            <li class="page-btn">
+                                <i class="fa fa-caret-left"></i>
+                            </li>
+                            <li class="page-btn">
+                                <i class="fa fa-caret-right"></i>
+                            </li>
+                        </ul>
+                    </header>
+                    <div id="message-container">
+                        <ul class="message-list">
+                            <li>
+                                <header class="user-info">
+                                    <img src="img/timg2.jpg" alt="Amy">
+                                    <h4>Bessie Berry</h4>
+                                    <time>8:31&nbsp;AM</time>
+                                </header>
+                                <section>
+                                    <p>Hi guys Ive got the O2 package and have really slow internet. A speed check online said
+                                        i can get 3mbps but it seems more like 0.5 these days, just freezing and taking ages
+                                        to open pages and open audio files for example. I have decided to switch to the UPC
+                                        package which offers 10mbps but do you think i will get it?</p>
+                                </section>
+                            </li>
+                            <li>
+                                <header class="user-info">
+                                    <img src="img/timg3.jpg" alt="Amy">
+                                    <h4>Jordan Jackson</h4>
+                                    <time>10:31&nbsp;AM</time>
+                                </header>
+                                <section>
+                                    <p>I have internet for 9 month and nevere could benefit from the full capacity of 5Mbit/s
+                                        as it is filtered by O2 when it detect traffic on public p2p sharing in my situation
+                                        all my internet speed slows to 512Kbit/s. I never had 400KB/s on when downloading
+                                        from p2p public servers like torrent emule etc. I downoad with 500KB/s from private
+                                        trakers instead. So conlcusion O2 block trafic on p2p connections. I have made hundreds
+                                        of test in Italy and Sweden and Romania with the same file to doanload with the same
+                                        setting and same antivirus and just needed to open ports in firewall and forward
+                                        same ports and the speed was at full capacity in 1 minute. here in 9 month never
+                                        had this luck.</p>
+                                </section>
+                            </li>
+                        </ul>
+                        <div class="split-line day-line" data-text="Tuesday"></div>
+                        <ul class="message-list">
+                            <li>
+                                <header class="user-info">
+                                    <img src="img/timg2.jpg" alt="Amy">
+                                    <h4>Bessie Berry</h4>
+                                    <time>8:31&nbsp;AM</time>
+                                </header>
+                                <section>
+                                    <p>Funny comparison. so would the proper antivirus not slow down the internet as much or
+                                        do you mean a freebie doenst protect the computer from viruses?</p>
+                                </section>
+                            </li>
+                            <li>
+                                <header class="user-info">
+                                    <img src="img/timg2.jpg" alt="Amy">
+                                    <h4>Bessie Berry</h4>
+                                    <time>11:31&nbsp;AM</time>
+                                </header>
+                                <section>
+                                    <p>I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick,
+                                        and stable. It's not perfect, but I really don't have issues, as long as I keep track
+                                        of what I'm doing on it. </p>
+                                </section>
+                            </li>
+                            <li>
+                                <header class="user-info">
+                                    <img src="img/timg3.jpg" alt="Amy">
+                                    <h4>Jordan Jackson</h4>
+                                    <time>10:31&nbsp;AM</time>
+                                </header>
+                                <section>
+                                    <p>I pay for the 4Mb/sec down, 512 Kb/sec up service from O2, and haven't had any problems.
+                                        In fact, it's relatively quick, and stable. It's not perfect, but I really don't
+                                        have issues, as long as I keep track of what I'm doing on it. I max out at about
+                                        3 Mb/sec down, and 350 Kb/sec up. Probably because of a noisy telephone line, not
+                                        because I'm being throttled. When my uploads go over 25 KB/sec (note, bytes, not
+                                        bits), my download speed suffers. This is expected, as downloads require upload bandwidth
+                                        as well. </p>
+                                    <ul class="message-img-list">
+                                        <li>
+                                            <img src="img/sky.jpg" alt="sky">
+                                            <div class="mask"></div>
+                                            <div class="mask-content">
+                                                <span class="plus-bg"></span>
+                                                <i class="fa fa-search-plus"></i>
+                                            </div>
+                                            <li>
+                                                <img src="img/sky.jpg" alt="sky">
+                                                <div class="mask"></div>
+                                                <div class="mask-content">
+                                                    <span class="plus-bg"></span>
+                                                    <i class="fa fa-search-plus"></i>
+                                                </div>
+                                            </li>
+                                        </li>
+                                    </ul>
+                                </section>
+                                </li>
+                        </ul>
+                        <div class="split-line new-line" data-text="New Messages"></div>
+                        <ul class="message-list">
+                            <li>
+                                <header class="user-info">
+                                    <img src="img/timg2.jpg" alt="Amy">
+                                    <h4>Bessie Berry</h4>
+                                    <time>11:31&nbsp;AM</time>
+                                </header>
+                                <section>
+                                    <p>I pay for the 4Mb/sec down, 512 Kb/sec up service from O2. In fact, it's relatively quick,
+                                        and stable. It's not perfect, but I really don't have issues, as long as I keep track
+                                        of what I'm doing on it. </p>
+                                </section>
+                            </li>
+                        </ul>
+                    </div>
+                    <footer id="column-main-footer">
+                        <button id="add-message-btn">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                        <textarea>Well, kinda both :) but more of that second option, i`ve seen many systems infected and crawling with</textarea>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
