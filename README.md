@@ -18,3 +18,12 @@ learning
 [Day0911](https://hydesmond.github.io/ife.baidu/Day0911/index.html)
 
 
+<p>这是day12的网站</p>
+[Day12](https://hydesmond.github.io/ife.baidu/day12/index.html)
+
+
+<p>这是day13的网站</p>
+[Day13](https://hydesmond.github.io/ife.baidu/Day13/index.html)
+
+<p>这是day14的网站</p>
+[Day14](https://hydesmond.github.io/ife.baidu/Day14/index.html)
