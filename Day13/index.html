@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta name="keywords" content="Day13,js">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>Day13</title>
+</head>
+<body>
+	<input id="first-number" type="number" value="0" placeholder="第一个数字">
+	<input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+    <script>
+    	var num1 = document.querySelector('#first-number');
+        var num2 = document.querySelector('#second-number');
+    	var oAdd = document.getElementById('add-btn');
+    	var oMin = document.getElementById('minus-btn');
+    	var oTim = document.getElementById('times-btn');
+    	var oDivi = document.getElementById('divide-btn');
+    	var oresult = document.getElementById('result');
+        var resu = '';
+
+    	oAdd.onclick = function() {
+            //对input内容转为number值
+            Num1 = Number(num1.value);
+            Num2 = Number(num2.value);
+            resu =  Num1 + Num2;
+            console.log(typeof(Number('-')));
+            oresult.innerHTML = '运算结果：' + resu;
+    	}
+    	oMin.onclick = function() {
+    		Num1 = Number(num1.value);
+            Num2 = Number(num2.value);
+            resu =  Num1 - Num2;
+            console.log(typeof(Num1));
+            oresult.innerHTML = '运算结果：' + resu;
+    	}
+    	oTim.onclick = function() {
+    		Num1 = Number(num1.value);
+            Num2 = Number(num2.value);
+            resu =  Num1 * Num2;
+            console.log(typeof(Num1));
+            oresult.innerHTML = '运算结果：' + resu;
+    	}
+    	oDivi.onclick = function() {
+    		Num1 = Number(num1.value);
+            Num2 = Number(num2.value);
+            if( Num2 != 0){
+                resu = Num1 / Num2;
+                console.log(resu);
+                oresult.innerHTML = '运算结果：' + resu;
+            }else {
+                alert('除数不能为0');
+            }
+    	}
+    </script>
+</body>
+</html>
