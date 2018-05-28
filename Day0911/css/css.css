@@ -25,7 +25,7 @@ body {
 .Wel_login {
 	width: 1600px;
 	height: 990px;
-	background: url(../images/bg.png) no-repeat;
+	background: url(../images/bg.jpg) no-repeat;
 	text-align: center;
 
 }
@@ -153,7 +153,7 @@ body {
 .Check_out {
 	width: 1600px;
 	height: 802px;
-	background: url(../images/bg.png) no-repeat 0 -990px;
+	background: url(../images/bg.jpg) no-repeat 0 -990px;
 	padding: .1px;
 	overflow: hidden;
 }
