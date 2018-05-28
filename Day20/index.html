@@ -138,6 +138,7 @@
 	-->
 	<div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
 	<button id="fade-btn">淡出</button>
+  <hr>
    <script>
    		var fadeObj = document.getElementById('fade-obj');
    		var fadeBtm = document.getElementById('fade-btn');
@@ -193,6 +194,32 @@
    					},100)*/ 
    			}
    		}
+   </script>
+  
+  <!---->
+   <div class="smile" style="width: 480px;height: 480px;background: url(./images/smile.jpg)"></div>
+   <button type="submit" class="boom-btn">try it</button>
+   <script>
+      var oSmile = document.querySelector('.smile');
+      var oBoom = document.querySelector('.boom-btn');
+      var positionY = 0;
+
+      oBoom.onclick = function() {
+        //每次开启定时器前，先关掉；
+        clearInterval(IntSmile);
+        //
+        var IntSmile = setInterval(function() {  
+          //使用连字符获取backgroundPostion的位置；
+          oSmile.style.backgroundPosition = '0 -' + positionY + 'px';
+          //图片每个头像的width跟height都为480px，所以每次增加480；
+          positionY += 480;
+          if(positionY > (8160 - 480)) {
+            positionY = 0;
+          }
+        }, 60);
+        
+      }
+
    </script>
 </body>
 </html>
