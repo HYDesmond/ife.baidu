@@ -29,8 +29,12 @@
             Num1 = Number(num1.value);
             Num2 = Number(num2.value);
             resu =  Num1 + Num2;
-            console.log(typeof(Number('-')));
-            oresult.innerHTML = '运算结果：' + resu;
+            if(!String(Num1).indexOf('--') || !String(Num2).indexOf('--')){
+                console.log(typeof(Number('-')));
+                oresult.innerHTML = '运算结果：' + resu;
+            }else{
+                console.log('数据错误')
+            }
     	}
     	oMin.onclick = function() {
     		Num1 = Number(num1.value);
@@ -54,8 +58,7 @@
                 console.log(resu);
                 oresult.innerHTML = '运算结果：' + resu;
             }else {
-                alert('除数不能为0');
-               
+                alert('除数不能为0');   
             }
     	}
     </script>
