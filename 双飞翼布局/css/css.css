@@ -1,39 +1,43 @@
-*,body{
-	margin:0;
-	padding:0;
+*,
+body {
+	margin: 0;
+	padding: 0;
 }
 /*设置清除浮动*/
-.clearFix{
-	zoom:1;
+.clearFix {
+	zoom: 1;
 }
-.clearFix:after{
-	clear:both;
-	display:table;
+.clearFix:after {
+	clear: both;
+	display: table;
 }
 
 /*设置header跟footer样式，宽度100%，最低高低100px*/
-.header,.footer{
-	width:100%;
-	min-height:100px;
-	background:lightblue;
+.header,
+.footer {
+	width: 100%;
+	min-height: 100px;
+	background: lightblue;
 }
 /*
 设置overflow已清除浮动带来的影响
 */
-.container{
-	overflow:hidden;
+.container {
+	overflow: hidden;
 }
 /*
 1、将middle-wrap,left,right共同样式写在一起
 2、设置为浮动，最低高度为200px；
 */
-.container .middle-wrap,.container .left,.container .right{
-	min-height:200px;
-	float:left;
+.container .middle-wrap,
+.container .left,
+.container .right {
+	min-height: 200px;
+	float:left ;
 }
 /*设置middle-wrap的width:100%*/
-.container .middle-wrap{
-	width:100%;
+.container .middle-wrap {
+	width: 100%;
 }
 
 /*
@@ -41,28 +45,28 @@
 2.设置margin-left：为<div class="left">的width值
 3.设置margin-right：为<div class="right">的width值
 */
-.container .middle{
-	background:#a60000;
-	min-height:200px;
-	margin:0 200px 0 200px;
+.container .middle {
+	background: #a60000;
+	min-height: 200px;
+	margin: 0 200px 0 200px;
 }
 
 /*
 1.设置left的width
 2.设置margin-left：为-100%；
 */
-.container .left{
-	width:200px;
-	margin-left:-100%;
-	background:lightgreen;
+.container .left {
+	width: 200px;
+	margin-left: -100%;
+	background: lightgreen;
 }
 
 /*
 1.设置right的width
 2.设置margin-left：为-'width'+px；
 */
-.container .right{
-	width:200px;
-	margin-left:-200px;
-	background:darkslategray;
+.container .right {
+	width: 200px;
+	margin-left: -200px;
+	background: darkslategray;
 }
