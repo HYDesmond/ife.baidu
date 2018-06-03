@@ -5,6 +5,7 @@
 	<title>Document</title>
 </head>
 <body>
+	<!--任务一-->
 	<div>
 	    <label>Number A:<input id="radio-a" type="radio" name="math-obj" value="a"></label><input id="num-a" type="text">
 	    <label>Number B:<input id="radio-b" type="radio" name="math-obj" value="b"></label><input id="num-b" type="text">
@@ -67,9 +68,9 @@
 			}
 		}
 	</script>
+	<!--end任务一-->
 
-
-	<!---->
+	<!--任务2-->
 	<div>
 	    <label>String A:
 	        <input id="radio-a1" type="radio" checked="true" name="str-obj" value="a">
@@ -183,9 +184,9 @@
 			}
 		}*/
 	</script>
+	<!--end任务2-->
 
-
-	<!---->
+	<!--任务3-->
 	<script>
 			/*
 	实现一个字符串头尾去除空格的函数
@@ -194,9 +195,19 @@
 	*/
 	function diyTrim(str) {
 	    var result = "";
-
+	    //首先将头尾的空格去除
+	    str = str.trim();
+	    var arr1 = [];
 	    // do something
-
+	    //用for循环将去除头尾空格的str分成单个字符
+	    for (var i = 0; i < str.length; i++) {
+	    	//如果当前的元素不为空值，用arr1储存起来
+	    	if(str.slice(i,i+1) !== ' '){
+	    		arr1.push(str.slice(i,i+1));
+	    	}
+	    }
+	    //将去除空格的数组用join（''）去除‘，’拼接起来后，赋值给result
+	    result = arr1.join('');
 	    return result
 	}
 
@@ -215,9 +226,17 @@
 	*/
 	function removeRepetition(str) {
 	    var result = "";
-
+	    var arr1 = [];
 	    // do something
-
+	    // 模拟数组去重，因为字符串可以认为伪数组，具有length，跟下标，模拟数组去重
+	    // 思路：for循环str所有的值，当arr1数组内不具有该值时（即indexof == -1）时，push进去
+	    for(var i = 0;i < str.length; i++) {
+	    	if(arr1.indexOf(str[i]) == -1) {
+	    		arr1.push(str[i]);
+	    	}
+	    }
+	    //将去除空格的数组用join（''）去除‘，’拼接起来后，赋值给result
+	    result = arr1.join('');
 	    return result;
 	}
 
@@ -229,5 +248,88 @@
 	console.log(removeRepetition("abc")); // ->abc
 
 	</script>
+	<!--end任务3-->
+
+	<!--任务4-->
+	<script>
+		var tree = {
+		    "id": 0,
+		    "name": "root",
+		    "left": {
+		        "id": 1,
+		        "name": "Simon",
+		        "left": {
+		            "id": 3,
+		            "name": "Carl",
+		            "left": {
+		                "id": 7,
+		                "name": "Lee",
+		                "left": {
+		                    "id": 11,
+		                    "name": "Fate"
+		                }
+		            },
+		            "right": {
+		                "id": 8,
+		                "name": "Annie",
+		                "left": {
+		                    "id": 12,
+		                    "name": "Saber"
+		                }
+		            }
+		        },
+		        "right": {
+		            "id": 4,
+		            "name": "Tony",
+		            "left": {
+		                "id": 9,
+		                "name": "Candy"
+		            }
+		        }
+		    },
+		    "right": {
+		        "id": 2,
+		        "name": "right",
+		        "left": {
+		            "id": 5,
+		            "name": "Carl",
+		        },
+		        "right": {
+		            "id": 6,
+		            "name": "Carl",
+		            "right": {
+		                "id": 10,
+		                "name": "Kai"
+		            }        
+		        }
+		    }
+		}
+
+		// 假设id和name均不会重复，根据输入name找到对应的id
+		function findIdByName(name) {
+
+		}
+
+		// 假设id和name均不会重复，根据输入id找到对应的name
+		function findNameById(id) {
+
+		}
+
+		// 把这个对象中所有的名字以“前序遍历”的方式全部输出到console中
+		function getListWithDLR() {
+
+		}
+
+		// 把这个对象中所有的名字以“中序遍历”的方式全部输出到console中
+		function getListWithLDR() {
+
+		}
+
+		// 把这个对象中所有的名字以“后序遍历”的方式全部输出到console中
+		function getListWithLRD() {
+
+		}
+	</script>
+	<!--end任务4-->
 </body>
 </html>
