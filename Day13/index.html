@@ -24,36 +24,36 @@
     	var oresult = document.getElementById('result');
         var resu = '';
 
-    	oAdd.onclick = function() {
+    	oAdd.onclick = function () {
             //对input内容转为number值
             Num1 = Number(num1.value);
             Num2 = Number(num2.value);
             resu =  Num1 + Num2;
-            if(!String(Num1).indexOf('--') || !String(Num2).indexOf('--')){
+            if (!String(Num1).indexOf('--') || !String(Num2).indexOf('--')){
                 console.log(typeof(Number('-')));
                 oresult.innerHTML = '运算结果：' + resu;
-            }else{
+            }else {
                 console.log('数据错误')
             }
     	}
-    	oMin.onclick = function() {
+    	oMin.onclick = function () {
     		Num1 = Number(num1.value);
             Num2 = Number(num2.value);
             resu =  Num1 - Num2;
             console.log(typeof(Num1));
             oresult.innerHTML = '运算结果：' + resu;
     	}
-    	oTim.onclick = function() {
+    	oTim.onclick = function () {
     		Num1 = Number(num1.value);
             Num2 = Number(num2.value);
             resu =  Num1 * Num2;
             console.log(typeof(Num1));
             oresult.innerHTML = '运算结果：' + resu;
     	}
-    	oDivi.onclick = function() {
+    	oDivi.onclick = function () {
     		Num1 = Number(num1.value);
             Num2 = Number(num2.value);
-            if( Num2 != 0){
+            if ( Num2 != 0){
                 resu = Num1 / Num2;
                 console.log(resu);
                 oresult.innerHTML = '运算结果：' + resu;

@@ -39,10 +39,10 @@
 	<script>
 		var oName = document.getElementById('name');
 		var ob = document.getElementById('submit-btn');
-		ob.onclick = function() {
+		ob.onclick = function () {
 			console.log(oName.value);
 		};
-		document.onkeydown = function() {
+		document.onkeydown = function () {
 			var keyCode = event.keyCode;
 			if (keyCode === 27) oName.value = '';
 			if (keyCode === 13) console.log(oName.value);
@@ -83,11 +83,11 @@
 	    	obj1.style.display = 'block';
 	    	obj2.style.display = 'none';
 	    }
-	    oSchool.addEventListener('click', function(){
+	    oSchool.addEventListener('click', function () {
 	    	show(schoolSelet, comSelet);
 	    })
 	    	
-	    oCompany.addEventListener('click', function(){
+	    oCompany.addEventListener('click', function () {
 	    	show(comSelet, schoolSelet);
 	    })
 
@@ -126,7 +126,7 @@
                 p.style.color = c;
 	    	}
 	    }
-	    oUl.addEventListener('click', function(ev) {
+	    oUl.addEventListener('click', function (ev) {
 	    	colorChange(ev, p);
 	    })
     </script>
@@ -149,28 +149,28 @@
    		//Timeout函数
    		function userTimeOut() {
    			//当opacity小于1是，让其仿佛执行setTimeout函数，直到满足条件
-   			if(num < 1) {
+   			if (num < 1) {
    				fadeObj.style.opacity = num;
    				num += 0.1;
    				setTimeout('userTimeOut()', 100);
    				//当opacity满足1时，isfadeout取反，让button再次点击时能够执行淡入函数，且按钮内容为淡入
-   				if(num > 1 || num ===1){
+   				if (num > 1 || num ===1) {
    					isfadeOut = !isfadeOut;
    					fadeBtm.disabled = false;
 					  fadeBtm.innerHTML = '淡入';
    				}
    			}
    		}
-   		fadeBtm.onclick = function() {	
+   		fadeBtm.onclick = function () {	
    			//button点击后第一件事，让按钮不能点击，直到完成指定事件
    			fadeBtm.disabled = true;
    			//判断当前是否淡出，如果淡出让其执行淡入函数
    			//淡入使用setInterval函数
    			if(isfadeOut){
-   					var IntV = setInterval(function() {
+   					var IntV = setInterval(function () {
    						fadeObj.style.opacity = num;
    						num -= 0.1;
-   						if(num < 0) {
+   						if (num < 0) {
    							//当opacity满足0(即完全隐藏)时，isfadeout取反，让button再次点击时能够执行淡出函数，且按钮内容为淡出
    							isfadeOut = !isfadeOut;
    							fadeBtm.innerHTML = '淡出';
@@ -204,11 +204,11 @@
       var oBoom = document.querySelector('.boom-btn');
       var positionY = 0;
 
-      oBoom.onclick = function() {
+      oBoom.onclick = function () {
         //每次开启定时器前，先关掉；
         clearInterval(IntSmile);
         //
-        var IntSmile = setInterval(function() {  
+        var IntSmile = setInterval(function () {  
           //使用连字符获取backgroundPostion的位置；
           oSmile.style.backgroundPosition = '0 -' + positionY + 'px';
           //图片每个头像的width跟height都为480px，所以每次增加480；

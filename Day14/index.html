@@ -100,19 +100,19 @@
 			//<!--不能为非负数-->
 			//dec<0检验输入的值是否为负数
 			//String(dec).indexOf(".")判断是否有小数点
-			if(dec < 0 || String(dec).indexOf(".") > -1) {
+			if (dec < 0 || String(dec).indexOf(".") > -1) {
 				alert('不可以输入负数或非整数哦');
 			}else {
 				//根据0为false的Boolean特性，当dec不为0时执行下列代码
-				while(dec) {
+				while (dec) {
 					//使用数组arr储存余数
 					arr.unshift( dec % 2);
 					//dec除以2，向下取整
 					dec = Math.floor(dec / 2);
 				}
 				//arr.join,即string的替换函数实现去除数组的，
-				if(bit && bit > arr.length) {
-					for( var i=0; i< bit - arr.length; i++){
+				if (bit && bit > arr.length) {
+					for ( var i=0; i< bit - arr.length; i++){
 						arr.unshift(0);
 					}
 				}
@@ -131,11 +131,11 @@
 		var oThree = document.querySelector('#game');
 		(function threeshow(){
 			arr1 = [];
-			for( var i = 1;i < 100;i++){
-				if(i % 3){
+			for ( var i = 1;i < 100;i++) {
+				if (i % 3){
 					arr1.push(i);
 					//console.log(i);
-				} else if(String(i).indexOf('3')>-1){
+				} else if (String(i).indexOf('3')>-1) {
 					arr1.push('PA');
 					//console.log('PA');
 				} else {
@@ -149,8 +149,8 @@
 		//99
 		var oTab = document.querySelector('#Tabl');
 		var aTd = document.querySelectorAll('td');
-		for(var i=1, x=0;i<=9;i++){
-			for(var j=1;j<=i;j++){
+		for (var i=1, x=0;i<=9;i++){
+			for (var j=1;j<=i;j++){
 				aTd[x].textContent = j + '*' + i + '=' + i * j;
 				x++;
 			}
