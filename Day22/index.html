@@ -21,6 +21,7 @@
 	    <button>返回 A 和 B 中的最低值</button>        
 	</div>
 	<p id="result"></p>
+	<hr>
 	<script>
 		var radioA = document.getElementById('radio-a');
 		var radioB = document.querySelector("#radio-b");
@@ -44,8 +45,8 @@
 			var target = ev.target || ev.srcElement;
 			if(target.nodeName.toLowerCase() == 'button') {
 				//获取当前的button对应下标
-				var aBtn=this.querySelectorAll("button");
-                btn_index = Array.prototype.indexOf.call(aBtn,target);
+				var aBtn = this.querySelectorAll("button");
+                btn_index = Array.prototype.indexOf.call(aBtn, target);
                 //对应下标做对应的事情
                 //index为0时（即点击第一个button时），只执行isNumber函数
 				if (btn_index == 0) {
@@ -98,6 +99,7 @@
 	    <button>把所选输入框中内容的a全部替换成另外一个输入框中的内容</button>
 	</div>
 	<p id="result1"></p>
+	<hr>
 	<script>
 		var oCon = document.querySelector('#container1');
 		var radioA = document.querySelector('#radio-a1');
@@ -306,30 +308,258 @@
 		}
 
 		// 假设id和name均不会重复，根据输入name找到对应的id
-		function findIdByName(name) {
-
+		function findIdByName(obj, name) {
+			function findName(obj) {  //遍历对象
+                for (i in obj) {
+                    if (typeof (obj[i]) == "object") {
+                        findName(obj[i]);  //如果属性是对象，进行遍历
+                    } else if (obj[i] == name) {
+                        console.log("name: " + name + " id: " + obj.id);
+                    }
+                }
+            }
+            findName(obj);
 		}
-
+		findIdByName(tree, "Kai");
 		// 假设id和name均不会重复，根据输入id找到对应的name
-		function findNameById(id) {
-
+		
+		function findNameById(obj, id) {
+			function findName(obj) {  //遍历对象
+                for (i in obj) {
+                    if (typeof (obj[i]) == "object") {
+                        findName(obj[i]);  //如果属性是对象，进行遍历
+                    } else if (obj[i] == id) {
+                        console.log("id: " + id + " name: " + obj.name);
+                    }
+                }
+            }
+            findName(obj);
 		}
-
+		findNameById(tree, 6);
 		// 把这个对象中所有的名字以“前序遍历”的方式全部输出到console中
-		function getListWithDLR() {
-
+		function getListWithDLR(obj) {
+			console.log(obj.name);
+            if (obj.left) {
+                getListWithDLR(obj.left);
+            }
+            if (obj.right) {
+                getListWithDLR(obj.right);
+            }
 		}
-
+		getListWithDLR(tree);
 		// 把这个对象中所有的名字以“中序遍历”的方式全部输出到console中
-		function getListWithLDR() {
-
+		function getListWithLDR(obj) {
+			if (obj.left) {
+                getListWithLDR(obj.left);
+            }
+            console.log(obj.name);
+            if (obj.right) {
+                getListWithLDR(obj.right);
+            }
 		}
-
+		//getListWithLDR(tree);
 		// 把这个对象中所有的名字以“后序遍历”的方式全部输出到console中
-		function getListWithLRD() {
-
+		function getListWithLRD(obj) {
+			if (obj.left){
+                getListWithLRD(obj.left);
+            }
+            if(obj.right) {
+                getListWithLRD(obj.right);
+            }
+            console.log(obj.name);
 		}
+		//getListWithLRD(tree);
 	</script>
 	<!--end任务4-->
+
+	<!--任务5-->
+		<input id="queue-input" type="text">
+		<p id="queue-cont">队列内容：apple-&gt;pear</p>    
+		<div id="box5">
+			<button id="in-btn">入队</button>
+			<button id="out-btn">出队</button>
+			<button id="font-btn">打印队头元素内容</button>
+			<button id="empty-btn">判断队列是否为空</button>
+			<button id="reverse-btn">队头队尾互换</button>
+		</div>
+		
+		<hr>
+		<script>
+
+		var queue = ["apple", "pear"];
+
+		var isReverse = true; //isReverse为true时,对头与数组的尾
+		
+		/*var inBtn = document.querySelector('#in-btn');
+		var outBtn = document.querySelector('#out-btn');
+		var fontBtn = document.querySelector('#font-btn');
+		var emptyBtn = document.querySelector('#empty-btn');*/
+
+		//事件委托
+		var queueIpt = document.querySelector('#queue-input');
+		var oP5 = document.querySelector('#queue-cont');
+		document.querySelector('#box5').onclick =function (ev) {
+
+			var ev = ev || window.event;
+			var target = ev.target || ev.srcElement;
+			if(target.nodeName.toLowerCase() == 'button') {
+				//获取当前的button对应下标
+				var aBtn = this.querySelectorAll("button");
+                btn_index = Array.prototype.indexOf.call(aBtn, target);
+                //对应下标做对应的事情
+                //index为0时（即点击第一个button时），只执行入队操作
+				if(btn_index == 0) {
+					//入队前，先判断是否为空
+					//不为空，将input标签内容输入queue中，并用‘->’拼接起来
+					if (queueIpt.value !== '') {
+						//判断isReverse，true时，往数组尾部push；false往数组头部unshift；
+						isReverse ? queue.push(queueIpt.value) : queue.unshift(queueIpt.value);
+						
+						oP5.innerHTML = '队列内容:' + (isReverse ? queue.join('->') : queue.join('<-'));
+						queueIpt.value = '';//入队后，input清空
+					} else {//为空时，先让p内容显示输入错误
+						var partTime = oP5.innerHTML;
+						oP5.innerHTML = '没有输入数值哦';
+						setTimeout(function () {
+							oP5.innerHTML = partTime;
+						} ,1000)
+					}
+
+					//console.log(isReverse)
+				} else if (btn_index == 1) {
+						isReverse ? queue.shift(queueIpt.value) : queue.pop(queueIpt.value);
+						oP5.innerHTML = '队列内容:' + (isReverse ? queue.join('->') : queue.join('<-'));
+						queueIpt.value = '';
+						if (queue.length == 0) {//当queue清空完了，提示已清空
+							oP5.innerHTML = '队列已清空';
+							return;
+						}
+				} else if (btn_index == 2) {
+					//slice获取queue第一个数
+					oP5.innerHTML = '队头为：' + (isReverse ? queue.slice(0,1) : queue.slice(queue.length-1,queue.length));
+						//console.log(queue.slice(queue.length-1,queue.length))
+					//console.log(queue);
+				} else if (btn_index == 3) {
+					if (queue.length === 0) {
+						oP5.innerHTML = '队列为空';
+					} else {
+						var partTime = oP5.innerHTML;
+						oP5.innerHTML = '队列不为空';
+						setTimeout(function () {
+							oP5.innerHTML = partTime;
+						} ,1000)
+					}
+				} else if (btn_index == 4) {
+						aBtn[btn_index].innerHTML = isReverse ?  '队头对应数组头部' : '队头对应数组尾部';
+				        isReverse = !isReverse;
+				        return isReverse;
+				}
+			}
+		}
+	
+		</script>
+	<!--end任务5-->
+
+
+	<!--任务6-->
+		<input id="stack-input" type="text">
+		<p id="stack-cont">栈内容：apple-&gt;pear</p> 
+		<div id="box6">
+			<button id="push-btn_3">进栈</button>
+			<button id="pop-btn_3">退栈</button>
+			<button id="font-btn_3">打印栈顶元素内容</button>
+			<button id="empty-btn_3">判断栈是否为空</button>
+			<button id="shift-btn">转换</button>
+		</div>
+		<script>
+
+		var stack = ["apple", "pear"];
+		var stackInput = document.querySelector('#stack-input');
+		var stackCont = document.querySelector('#stack-cont');
+		var isshift = true;
+		document.querySelector('#box6').onclick = function (ev) {
+			var ev = ev || window.event;
+			var target = ev.target || ev.srcElement;
+			if (target.nodeName.toLowerCase() == 'button') {
+				var aBtn = document.querySelector('#box6').getElementsByTagName('button');
+				btn_index = Array.prototype.indexOf.call(aBtn, target);
+				if (btn_index == 0) {
+					if (stackInput.value !== '') {
+						isshift ? stack.push(stackInput.value) : stack.unshift(stackInput.value);
+						stackCont.innerHTML = '栈内容：' + (isshift ? stack.join('->') : stack.join('<-'));
+						stackInput.innerHTML = '';
+					}else {
+						var partTime = stackCont.innerHTML;
+						stackCont.innerHTML = '请输入数值';
+						setTimeout(function(){
+							stackCont.innerHTML = partTime;
+						}, 1000)
+					}
+  				}else if (btn_index == 1) {
+					isshift ? stack.pop() : stack.shift();
+					stackCont.innerHTML = '栈内容：' + (isshift ? stack.join('->') : stack.join('<-'));
+				}else if (btn_index == 2) {
+					if (stack.length !== '') {
+						stackCont.innerHTML = stack.slice(stack.length-1, stack.length);
+					}
+				}else if (btn_index == 3) {
+					if (stack.length == '') {
+						var partTime = stackCont.innerHTML;
+						stackCont.innerHTML = '空栈';
+						setTimeout(function () {
+							stackCont.innerHTML = partTime;
+						} ,1000)
+					} else {
+						var partTime = stackCont.innerHTML;
+						stackCont.innerHTML = '不为空'
+						setTimeout(function () {
+							stackCont.innerHTML = partTime;
+						} ,1000)
+					}
+				}else if(btn_index == 4) {
+					aBtn[btn_index].innerHTML = isshift ? '传统栈' : '非传统栈' ;
+					isshift = !isshift;
+					return isshift;
+				}
+			}
+		}
+		</script>
+	<!--end任务6-->
+	
+
+	<!--任务7-->
+	<script>
+		var arr7_1 = [43, 54, 4, -4, 84, 100, 58, 27, 140];
+		var arr7_2 = ['apple', 'dog', 'cat', 'car', 'zoo', 'orange', 'airplane'];
+		var arr7_3 = [[10, 14], [16, 60], [7, 44], [26, 35], [22, 63]];
+		var arr7_4 = [
+	    {
+	        id: 1,
+	        name: 'candy',
+	        value: 40
+	    }, {
+	        id: 2,
+	        name: 'Simon',
+	        value: 50
+	    }, {
+	        id: 3,
+	        name: 'Tony',
+	        value: 45
+	    }, {
+	        id: 4,
+	        name: 'Annie',
+	        value: 60
+	    }
+	];
+	</script>
+	<!--end任务7-->
+
+	<!--任务8-->
+
+	<!--end任务8-->
+
+	<!--任务9-->
+
+	<!--end任务9-->
 </body>
 </html>
