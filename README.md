@@ -27,3 +27,9 @@ learning
 
 <p>这是day14的网站</p>
 [Day14](https://hydesmond.github.io/ife.baidu/Day14/index.html)
+
+<p>这是day20的网站</p>
+[Day20](https://hydesmond.github.io/ife.baidu/Day20/index.html)
+
+<p>这是day22的网站</p>
+[Day22](https://hydesmond.github.io/ife.baidu/Day22/index.html)
