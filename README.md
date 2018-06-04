@@ -1,4 +1,6 @@
 本目录下的所有例子均为2018百度技术学院的学习任务。
+
+可通过以下链接查看在线demo
 <hr>
 
 [让简历有点色彩](https://hydesmond.github.io/ife.baidu/Day3/index.html)
@@ -7,10 +9,10 @@
 [三种简历](https://hydesmond.github.io/ife.baidu/Day5/index.html)
 <br>
 
-[学习布局]](https://hydesmond.github.io/ife.baidu/Day7/index.html)
+[学习布局](https://hydesmond.github.io/ife.baidu/Day7/index.html)
 <br>
 
-[来做一个漂亮的网站]](https://hydesmond.github.io/ife.baidu/Day0911/index.html)
+[来做一个漂亮的网站](https://hydesmond.github.io/ife.baidu/Day0911/index.html)
 
 [复杂页面实现](https://hydesmond.github.io/ife.baidu/day12/index.html)
 
