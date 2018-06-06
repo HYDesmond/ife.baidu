@@ -23,3 +23,5 @@
 [让你和页面对话](https://hydesmond.github.io/ife.baidu/Day20/index.html)
 
 [JavaScript里面的居民们](https://hydesmond.github.io/ife.baidu/Day22/index.html)
+
+[倒数开始 滴答滴 滴答滴](https://hydesmond.github.io/ife.baidu/Day25/index.html)
