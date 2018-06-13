@@ -22,12 +22,12 @@
 
 [让你和页面对话](https://hydesmond.github.io/ife.baidu/basic/Day20/index.html)
 
-[JavaScript里面的居民们](https://hydesmond.github.io/basic/ife.baidu/Day22/index.html)
+[JavaScript里面的居民们](https://hydesmond.github.io/ife.baidu/basic/Day22/index.html)
 
-[倒数开始 滴答滴 滴答滴](https://hydesmond.github.io/basic/ife.baidu/Day25/index.html)
+[倒数开始 滴答滴 滴答滴](https://hydesmond.github.io/ife.baidu/basic/Day25/index.html)
 
-[给爱的人发个邮件吧](https://hydesmond.github.io/basic/ife.baidu/Day28/index.html)
+[给爱的人发个邮件吧](https://hydesmond.github.io/ife.baidu/basic/Day28/index.html)
 
-[我是精明的小卖家（一）](https://hydesmond.github.io/basic/ife.baidu/Day31/index.html)
+[我是精明的小卖家（一）](https://hydesmond.github.io/ife.baidu/basic/Day31/index.html)
 
-[我是精明的小卖家（二）](https://hydesmond.github.io/basic/ife.baidu/Day34/index.html)
+[我是精明的小卖家（二）](https://hydesmond.github.io/ife.baidu/basic/Day34/index.html)
