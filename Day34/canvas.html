@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" width="1024" height="768" style="border:1px solid #aaa;display:block;margin:50 auto;"></canvas>
+    <script>
+        var canvas=document.getElementById("canvas");
+        var context=canvas.getContext("2d");
+        context.beginPath();
+        context.moveTo(20,20);
+        context.lineTo(100,20);
+        context.strokeStyle="red";
+        context.stroke();
+        context.closePath();
+
+        context.beginPath();
+        context.moveTo(20,30);
+        context.lineTo(100,30);
+        context.lineTo(100,80);
+        context.lineTo(20,80);
+        context.lineTo(20,30);
+        context.fill();
+        context.closePath();
+
+        context.beginPath();
+        context.arc(30,100,10,0,2*Math.PI);
+        context.fillStyle="blue";
+        context.fill()
+        context.closePath();
+
+        context.beginPath();
+        context.font="20px Georgia";
+        context.fillText("你好!",20,150);
+        context.closePath();
+    </script>
+</body>
+</html>
