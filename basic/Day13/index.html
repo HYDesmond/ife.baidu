@@ -1,84 +1,86 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="keywords" content="Day13,js">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<title>Day13</title>
-    <link href="../favicon.ico" rel="shortcut icon"/>
+	<link href="../favicon.ico" rel="shortcut icon" />
 </head>
+
 <body>
 	<input id="first-number" type="number" value="0" placeholder="第一个数字">
 	<input id="second-number" type="number" value="0" placeholder="第二个数字">
-    <div id="box">
-    	<button id="add-btn">加</button>
-    	<button id="minus-btn">减</button>
-    	<button id="times-btn">乘</button>
-    	<button id="divide-btn">除</button>
-    </div>	
-    <p id="result">运算结果</p>
-    <script>
-    	var num1 = document.querySelector('#first-number');
-        var num2 = document.querySelector('#second-number');
+	<div id="box">
+		<button id="add-btn">加</button>
+		<button id="minus-btn">减</button>
+		<button id="times-btn">乘</button>
+		<button id="divide-btn">除</button>
+	</div>
+	<p id="result">运算结果</p>
+	<script>
+		var num1 = document.querySelector('#first-number');
+		var num2 = document.querySelector('#second-number');
     	/*var oAdd = document.getElementById('add-btn');
     	var oMin = document.getElementById('minus-btn');
     	var oTim = document.getElementById('times-btn');
     	var oDivi = document.getElementById('divide-btn');*/
-    	var oresult = document.getElementById('result');
-        var resu = '';
+		var oresult = document.getElementById('result');
+		var resu = '';
 
-       document.querySelector('#box').onclick = function (ev) {
-        	var ev = ev || window.event;
-        	var target = ev.target || ev.srcElement;
+		document.querySelector('#box').onclick = function (ev) {
+			var ev = ev || window.event;
+			var target = ev.target || ev.srcElement;
 
-        	if (target.nodeName.toLowerCase() == 'button') {
-        		var aBtn = document.querySelectorAll('button');
-        		var aBtn_index = Array.prototype.indexOf.call(aBtn, target);
-        		switch (aBtn_index) {
-        			case 0 :
-        				calculate('+');
-        				break;
-        			case 1 :
-        				calculate('-');
-        				break;
-        			case 2 :
-        				calculate('*');
-        				break;
-        			case 3 :
-        				calculate('/');
-        				break;
-        		}
-        	}
-        }
+			if (target.nodeName.toLowerCase() == 'button') {
+				var aBtn = document.querySelectorAll('button');
+				var aBtn_index = Array.prototype.indexOf.call(aBtn, target);
+				switch (aBtn_index) {
+					case 0:
+						calculate('+');
+						break;
+					case 1:
+						calculate('-');
+						break;
+					case 2:
+						calculate('*');
+						break;
+					case 3:
+						calculate('/');
+						break;
+				}
+			}
+		}
 
-        function calculate(type) {
-        	Num1 = Number(num1.value);
-            Num2 = Number(num2.value);
-            switch (type) {
-        			case '+':
-        				 resu =  Num1 + Num2;;
-        				break;
-        			case '-' :
-        				resu =  Num1 - Num2;;
-        				break;
-        			case '*' :
-        				resu =  Num1 * Num2;;
-        				break;
-        			case '/' :
-        				if(Num2 == 0) alert('除数不能为0');
-        				resu =  Num1 / Num2;;
-        				break;
-        		}
-            //resu =  Num1+Number(yunsuan)+Num2;
-            if (String(Num1).indexOf('--') > -1 || String(Num2).indexOf('--') > -1){
-                console.log('数据错误');
-            }else {
-                //console.log(typeof(Number('-')));
-                oresult.innerHTML = '运算结果：' + resu;
-            }
-        }
-     
-       
+		function calculate(type) {
+			Num1 = Number(num1.value);
+			Num2 = Number(num2.value);
+			switch (type) {
+				case '+':
+					resu = Num1 + Num2;;
+					break;
+				case '-':
+					resu = Num1 - Num2;;
+					break;
+				case '*':
+					resu = Num1 * Num2;;
+					break;
+				case '/':
+					if (Num2 == 0) alert('除数不能为0');
+					resu = Num1 / Num2;;
+					break;
+			}
+			//resu =  Num1+Number(yunsuan)+Num2;
+			if (String(Num1).indexOf('--') > -1 || String(Num2).indexOf('--') > -1) {
+				console.log('数据错误');
+			} else {
+				//console.log(typeof(Number('-')));
+				oresult.innerHTML = '运算结果：' + resu;
+			}
+		}
+
+
     	/*oAdd.onclick = function () {
             //对input内容转为number值
             Num1 = Number(num1.value);
@@ -117,6 +119,7 @@
                 alert('除数不能为0');   
             }
     	}*/
-    </script>
+	</script>
 </body>
+
 </html>

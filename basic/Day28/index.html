@@ -1,22 +1,25 @@
 <!DOCtYPE html>
 <html lang="zh-cn">
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<title>Day28</title>
-	<link href="../favicon.ico" rel="shortcut icon"/>
+	<link href="../favicon.ico" rel="shortcut icon" />
 	<style>
 		body,
-		ul{
+		ul {
 			margin: 0;
 			padding: 0;
 		}
+
 		.selected {
 			background: blue;
 		}
 	</style>
 </head>
+
 <body>
 	<input type="email" id="input-text">
 	<ul id="ul-tip">
@@ -28,17 +31,17 @@
 	</ul>
 	<script>
 		//自执行函数
-		~function(){
+		~function () {
 			var arrEmail = ['163.com', 'gmail.com', '126.com', 'qq.com', '263.net'];
 			var oUl = document.querySelector('#ul-tip');
-			var	oInp = document.querySelector('#input-text'); 
+			var oInp = document.querySelector('#input-text');
 			var aLi = oUl.querySelectorAll('li');
 			var nowIndex = 0;
-			
+
 			//------------------函数编写----------------------------//
 			//根据输入获取提示；
-			function myEmailValue (value) {
-				for(var i = 0; i < aLi.length; i++) {
+			function myEmailValue(value) {
+				for (var i = 0; i < aLi.length; i++) {
 					//每次将提示先清空
 					aLi[i].innerHTML = '';
 					//然后将当前的输入值返回给ali
@@ -50,19 +53,19 @@
 			function myMouseFunc(ev, attr, value) {
 				var ev = ev || window.event;
 				var target = ev.target || ev.srcElement;
-				if(target.nodeName.toLowerCase() === 'li') {
+				if (target.nodeName.toLowerCase() === 'li') {
 					//target.style.backgroundColor = 'lightblue';
-					if(attr != '' || value != ''){
+					if (attr != '' || value != '') {
 						target.style[attr] = value;
 					}
 					//返回当前的内容
 					return target.innerHTML;
-				
+
 				}
 			}
 			//当前选中的函数
 			function getClassName(index) {
-				for( var i=0;i<aLi.length;i++){
+				for (var i = 0; i < aLi.length; i++) {
 					//每次操作前，将所有的ali的class清空
 					aLi[i].className = '';
 				}
@@ -71,7 +74,7 @@
 			}
 
 			//-----------------end函数编写--------------------------//
-			
+
 			//---------------------事件操作----------------------//
 			//键盘操作
 			oInp.onkeyup = function (ev) {
@@ -82,36 +85,36 @@
 				getClassName(nowIndex);
 
 				//up
-				if(ev.keyCode == 38) {
+				if (ev.keyCode == 38) {
 					nowIndex--;
-					if (nowIndex < 0) nowIndex = aLi.length-1;
+					if (nowIndex < 0) nowIndex = aLi.length - 1;
 					getClassName(nowIndex);
 				}
 				//down
-				if(ev.keyCode == 40) {
+				if (ev.keyCode == 40) {
 					nowIndex++;
-					if (nowIndex > aLi.length-1) nowIndex = 0;
+					if (nowIndex > aLi.length - 1) nowIndex = 0;
 					getClassName(nowIndex);
 				}
 				//enter
 				if (ev.keyCode == 13) {
-               		oInp.value = aLi[nowIndex].innerHTML;//将当前返回直赋予输入框
+					oInp.value = aLi[nowIndex].innerHTML;//将当前返回直赋予输入框
 					oUl.style.display = 'none';
-            	}
-				
+				}
+
 			}
-			
-			oUl.addEventListener('mouseover', function(ev) {
+
+			oUl.addEventListener('mouseover', function (ev) {
 				myMouseFunc(ev, 'backgroundColor', 'lightblue');
 			})
 			//鼠标移出，当前无背景色
-			oUl.addEventListener('mouseout', function(ev) {
+			oUl.addEventListener('mouseout', function (ev) {
 				myMouseFunc(ev, 'backgroundColor', '');
 			})
-			
+
 			//调用
-			oUl.addEventListener('click', function(ev) {
-				!function(){
+			oUl.addEventListener('click', function (ev) {
+				!function () {
 					oInp.value = myMouseFunc(ev);//将当前返回直赋予输入框
 					//当输入框选择提示后，将提示列表隐藏
 					oUl.style.display = 'none';
@@ -121,8 +124,9 @@
 			//-----------------end事件操作-----------------------//
 		}()
 
-		
+
 	</script>
 
 </body>
+
 </html>

@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8"> 
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge">   
-    <title>IFE ECMAScript</title>
-    <link href="../favicon.ico" rel="shortcut icon"/>
-    <style>
-    	/*下拉列表*/
-        select {
-            display: none;
-        }
-        label + label {
-			margin-left: 30px;
-        }
 
-        select + select {
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<title>IFE ECMAScript</title>
+	<link href="../favicon.ico" rel="shortcut icon" />
+	<style>
+		/*下拉列表*/
+
+		select {
+			display: none;
+		}
+
+		label+label {
+			margin-left: 30px;
+		}
+
+		select+select {
 			margin-left: 120px;
-        }
+		}
+
 		/*点击某一个 Li 标签时，将 Li 的背景色显示在 P 标签内，并将 P 标签中的文字颜色设置成 Li 的背景色*/
-         .palette {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        .palette li {
-            width: 40px;
-            height: 40px;
-            border: 1px solid #000;
-            cursor: pointer;
-        }
-    </style>
+
+		.palette {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.palette li {
+			width: 40px;
+			height: 40px;
+			border: 1px solid #000;
+			cursor: pointer;
+		}
+	</style>
 </head>
-<body> 
+
+<body>
 	<!--
 	任务1：当点击按钮 submit-btn 时，在console中输出 name 中的内容
 	-->
-	<input id="name" type="text">    
+	<input id="name" type="text">
 	<button id="submit-btn">Submit</button>
 	<hr>
 	<script>
@@ -55,83 +62,81 @@
 	<!--
 	任务2：下拉列表
 	-->
-    <label>
-        <input id="school" name="status" type="radio">
-        School
-    </label>
-    <label>
-        <input id="company" name="status" type="radio">
-        Company
-    </label>
+	<label>
+		<input id="school" name="status" type="radio"> School
+	</label>
+	<label>
+		<input id="company" name="status" type="radio"> Company
+	</label>
 
-    <select id="school-select">        
-        <option>北京邮电大学</option>
-        <option>黑龙江大学</option>
-        <option>华中科技大学</option>
-    </select>
+	<select id="school-select">
+		<option>北京邮电大学</option>
+		<option>黑龙江大学</option>
+		<option>华中科技大学</option>
+	</select>
 
-    <select id="company-select">        
-        <option>百度</option>
-        <option>爱奇艺</option>        
-    </select>
-    <hr>
+	<select id="company-select">
+		<option>百度</option>
+		<option>爱奇艺</option>
+	</select>
+	<hr>
 	<script>
 		var oSchool = document.getElementById("school");
-	    var oCompany = document.getElementById("company");
+		var oCompany = document.getElementById("company");
 
-	    var schoolSelet = document.getElementById("school-select");
-	    var comSelet = document.getElementById('company-select')
-	     function show(obj1, obj2){
-	    	obj1.style.display = 'block';
-	    	obj2.style.display = 'none';
-	    }
-	    oSchool.addEventListener('click', function () {
-	    	show(schoolSelet, comSelet);
-	    })
-	    	
-	    oCompany.addEventListener('click', function () {
-	    	show(comSelet, schoolSelet);
-	    })
+		var schoolSelet = document.getElementById("school-select");
+		var comSelet = document.getElementById('company-select')
+		function show(obj1, obj2) {
+			obj1.style.display = 'block';
+			obj2.style.display = 'none';
+		}
+		oSchool.addEventListener('click', function () {
+			show(schoolSelet, comSelet);
+		})
+
+		oCompany.addEventListener('click', function () {
+			show(comSelet, schoolSelet);
+		})
 
 
 	</script>
 
 
-    <!--- 分割线  -->
+	<!--- 分割线  -->
 
 	<!--
 	任务3：点击某一个 Li 标签时，将 Li 的背景色显示在 P 标签内，并将 P 标签中的文字颜色设置成 Li 的背景色
 	-->
-    <ul class="palette" id="palette">
-        <li style="background-color:crimson"></li>
-        <li style="background-color:bisque"></li>
-        <li style="background-color:blueviolet"></li>
-        <li style="background-color:coral"></li>
-        <li style="background-color:chartreuse"></li>
-        <li style="background-color:darkolivegreen"></li>
-        <li style="background-color:cyan"></li>
-        <li style="background-color:#194738"></li>        
-    </ul>
-    <p class="color-picker"></p>
-    <hr>
-    <script>
-    	var oUl = document.getElementById('palette');
-	    var list = document.getElementsByTagName("li");
-	    var p = document.getElementsByClassName("color-picker")[0];
+	<ul class="palette" id="palette">
+		<li style="background-color:crimson"></li>
+		<li style="background-color:bisque"></li>
+		<li style="background-color:blueviolet"></li>
+		<li style="background-color:coral"></li>
+		<li style="background-color:chartreuse"></li>
+		<li style="background-color:darkolivegreen"></li>
+		<li style="background-color:cyan"></li>
+		<li style="background-color:#194738"></li>
+	</ul>
+	<p class="color-picker"></p>
+	<hr>
+	<script>
+		var oUl = document.getElementById('palette');
+		var list = document.getElementsByTagName("li");
+		var p = document.getElementsByClassName("color-picker")[0];
 
-	    function colorChange(ev, p) {
-	    	var ev = ev || window.event;
-	    	var target = ev.target || ev.srcElement;
-	    	var c = target.style.backgroundColor;
-	    	if(target.nodeName.toLowerCase() == 'li') {
-	    		p.innerHTML = c;
-                p.style.color = c;
-	    	}
-	    }
-	    oUl.addEventListener('click', function (ev) {
-	    	colorChange(ev, p);
-	    })
-    </script>
+		function colorChange(ev, p) {
+			var ev = ev || window.event;
+			var target = ev.target || ev.srcElement;
+			var c = target.style.backgroundColor;
+			if (target.nodeName.toLowerCase() == 'li') {
+				p.innerHTML = c;
+				p.style.color = c;
+			}
+		}
+		oUl.addEventListener('click', function (ev) {
+			colorChange(ev, p);
+		})
+	</script>
 	<!--- 分割线  -->
 
 
@@ -140,88 +145,89 @@
 	-->
 	<div id="fade-obj" style="width:300px;height:300px;background:#000"></div>
 	<button id="fade-btn">淡出</button>
-  <hr>
-   <script>
-   		var fadeObj = document.getElementById('fade-obj');
-   		var fadeBtm = document.getElementById('fade-btn');
-   		//设置isfadeOut用以判断是否淡出（TRUE跟false），也可以设置其他名称，但是建议设置比较能判断的，不建议设置x，这类的。
-   		var isfadeOut = true;
-   		//使用num记录opacity的值，其值在0~1之间，我这里设置1，跟isfadeout对应起来
-   		var num = 1;
-   		//Timeout函数
-   		function userTimeOut() {
-   			//当opacity小于1是，让其仿佛执行setTimeout函数，直到满足条件
-   			if (num < 1) {
-   				fadeObj.style.opacity = num;
-   				num += 0.1;
-   				setTimeout('userTimeOut()', 100);
-   				//当opacity满足1时，isfadeout取反，让button再次点击时能够执行淡入函数，且按钮内容为淡入
-   				if (num > 1 || num ===1) {
-   					isfadeOut = !isfadeOut;
-   					fadeBtm.disabled = false;
-					  fadeBtm.innerHTML = '淡入';
-   				}
-   			}
-   		}
-   		fadeBtm.onclick = function () {	
-   			//button点击后第一件事，让按钮不能点击，直到完成指定事件
-   			fadeBtm.disabled = true;
-   			//判断当前是否淡出，如果淡出让其执行淡入函数
-   			//淡入使用setInterval函数
-   			if(isfadeOut){
-   					var IntV = setInterval(function () {
-   						fadeObj.style.opacity = num;
-   						num -= 0.1;
-   						if (num < 0) {
-   							//当opacity满足0(即完全隐藏)时，isfadeout取反，让button再次点击时能够执行淡出函数，且按钮内容为淡出
-   							isfadeOut = !isfadeOut;
-   							fadeBtm.innerHTML = '淡出';
-   							fadeBtm.disabled = false;
-   							//因为setinterval跟setTimeout不一样，反复执行，所以当满足条件，手动关闭此函数
-   							window.clearInterval(IntV);
-   						}
-   					},100) 
-   				
-   			} else {
-   				//如果不是淡出时，执行淡入函数		
+	<hr>
+	<script>
+		var fadeObj = document.getElementById('fade-obj');
+		var fadeBtm = document.getElementById('fade-btn');
+		//设置isfadeOut用以判断是否淡出（TRUE跟false），也可以设置其他名称，但是建议设置比较能判断的，不建议设置x，这类的。
+		var isfadeOut = true;
+		//使用num记录opacity的值，其值在0~1之间，我这里设置1，跟isfadeout对应起来
+		var num = 1;
+		//Timeout函数
+		function userTimeOut() {
+			//当opacity小于1是，让其仿佛执行setTimeout函数，直到满足条件
+			if (num < 1) {
+				fadeObj.style.opacity = num;
+				num += 0.1;
+				setTimeout('userTimeOut()', 100);
+				//当opacity满足1时，isfadeout取反，让button再次点击时能够执行淡入函数，且按钮内容为淡入
+				if (num > 1 || num === 1) {
+					isfadeOut = !isfadeOut;
+					fadeBtm.disabled = false;
+					fadeBtm.innerHTML = '淡入';
+				}
+			}
+		}
+		fadeBtm.onclick = function () {
+			//button点击后第一件事，让按钮不能点击，直到完成指定事件
+			fadeBtm.disabled = true;
+			//判断当前是否淡出，如果淡出让其执行淡入函数
+			//淡入使用setInterval函数
+			if (isfadeOut) {
+				var IntV = setInterval(function () {
+					fadeObj.style.opacity = num;
+					num -= 0.1;
+					if (num < 0) {
+						//当opacity满足0(即完全隐藏)时，isfadeout取反，让button再次点击时能够执行淡出函数，且按钮内容为淡出
+						isfadeOut = !isfadeOut;
+						fadeBtm.innerHTML = '淡出';
+						fadeBtm.disabled = false;
+						//因为setinterval跟setTimeout不一样，反复执行，所以当满足条件，手动关闭此函数
+						window.clearInterval(IntV);
+					}
+				}, 100)
+
+			} else {
+				//如果不是淡出时，执行淡入函数		
 				userTimeOut();
-   					/*var IntV = setInterval(function() {
-   						fadeObj.style.opacity = num;
-   						num += 0.1;
-   						if(num > 1) {
-   							isfadeOut = !isfadeOut;
-   							fadeBtm.innerHTML = '淡入';
-   							window.clearInterval(IntV);
-   						}
-   					},100)*/ 
-   			}
-   		}
-   </script>
-  
-  <!---->
-   <div class="smile" style="width: 480px;height: 480px;background: url(./images/smile.jpg)"></div>
-   <button type="submit" class="boom-btn">try it</button>
-   <script>
-      var oSmile = document.querySelector('.smile');
-      var oBoom = document.querySelector('.boom-btn');
-      var positionY = 0;
+				/*var IntV = setInterval(function() {
+					fadeObj.style.opacity = num;
+					num += 0.1;
+					if(num > 1) {
+						isfadeOut = !isfadeOut;
+						fadeBtm.innerHTML = '淡入';
+						window.clearInterval(IntV);
+					}
+				},100)*/
+			}
+		}
+	</script>
 
-      oBoom.onclick = function () {
-        //每次开启定时器前，先关掉；
-        clearInterval(IntSmile);
-        //
-        var IntSmile = setInterval(function () {  
-          //使用连字符获取backgroundPostion的位置；
-          oSmile.style.backgroundPosition = '0 -' + positionY + 'px';
-          //图片每个头像的width跟height都为480px，所以每次增加480；
-          positionY += 480;
-          if(positionY > (8160 - 480)) {
-            positionY = 0;
-          }
-        }, 60);
-        
-      }
+	<!---->
+	<div class="smile" style="width: 480px;height: 480px;background: url(./images/smile.jpg)"></div>
+	<button type="submit" class="boom-btn">try it</button>
+	<script>
+		var oSmile = document.querySelector('.smile');
+		var oBoom = document.querySelector('.boom-btn');
+		var positionY = 0;
 
-   </script>
+		oBoom.onclick = function () {
+			//每次开启定时器前，先关掉；
+			clearInterval(IntSmile);
+			//
+			var IntSmile = setInterval(function () {
+				//使用连字符获取backgroundPostion的位置；
+				oSmile.style.backgroundPosition = '0 -' + positionY + 'px';
+				//图片每个头像的width跟height都为480px，所以每次增加480；
+				positionY += 480;
+				if (positionY > (8160 - 480)) {
+					positionY = 0;
+				}
+			}, 60);
+
+		}
+
+	</script>
 </body>
+
 </html>

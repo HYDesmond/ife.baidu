@@ -1,272 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Day31</title>
-    <link href="../favicon.ico" rel="shortcut icon"/>
-	<style>	
-		table td{
-			padding: 20px;
-			background-color: lightblue;
-		}
-	</style>
-	<title>Document</title>
+    <link href="../favicon.ico" rel="shortcut icon" />
+    <style>
+        table td {
+            padding: 20px;
+            background-color: lightblue;
+        }
+    </style>
+    <title>Document</title>
 </head>
+
 <body>
-	<div id="container">
+    <div id="container">
 
-	<div id="region">
-		<input type="checkbox" name="" id="region-all" value="全部"><label for="region-all">全部</label>
-		<input type="checkbox" name="" id="east" value="华东"><label for="east">华东</label>
-		<input type="checkbox" name="" id="north" value="华北"><label for="north">华北</label>
-		<input type="checkbox" name="" id="south" value="华南"><label for="south">华南</label>
-	</div>
-	<div id="product">
-		<input type="checkbox" name="" id="product-all" value="全部"><label for="product-all">全部</label>
-		<input type="checkbox" name="" id="phone" value="手机"><label for="phone">手机</label>
-		<input type="checkbox" name="" id="book" value="笔记本"><label for="book">笔记本</label>
-		<input type="checkbox" name="" id="iq" value="智能音箱"><label for="iq">智能音箱</label>
-	</div>
+        <div id="region">
+            <input type="checkbox" name="" id="region-all" value="全部">
+            <label for="region-all">全部</label>
+            <input type="checkbox" name="" id="east" value="华东">
+            <label for="east">华东</label>
+            <input type="checkbox" name="" id="north" value="华北">
+            <label for="north">华北</label>
+            <input type="checkbox" name="" id="south" value="华南">
+            <label for="south">华南</label>
+        </div>
+        <div id="product">
+            <input type="checkbox" name="" id="product-all" value="全部">
+            <label for="product-all">全部</label>
+            <input type="checkbox" name="" id="phone" value="手机">
+            <label for="phone">手机</label>
+            <input type="checkbox" name="" id="book" value="笔记本">
+            <label for="book">笔记本</label>
+            <input type="checkbox" name="" id="iq" value="智能音箱">
+            <label for="iq">智能音箱</label>
+        </div>
 
-	</div>
+    </div>
 
-	<div id="table">
+    <div id="table">
 
-	</div>
-	<script src="ife31data.js"></script>
+    </div>
+    <script src="ife31data.js"></script>
 </body>
 
 <script>
-let sourceData = [{
-    product: "手机",
-    region: "华东",
-    sale: [120, 100, 140, 160, 180, 185, 190, 210, 230, 245, 255, 270]
-}, {
-    product: "手机",
-    region: "华北",
-    sale: [80, 70, 90, 110, 130, 145, 150, 160, 170, 185, 190, 200]
-}, {
-    product: "手机",
-    region: "华南",
-    sale: [220, 200, 240, 250, 260, 270, 280, 295, 310, 335, 355, 380]
-}, {
-    product: "笔记本",
-    region: "华东",
-    sale: [50, 60, 80, 110, 30, 20, 70, 30, 420, 30, 20, 20]
-}, {
-    product: "笔记本",
-    region: "华北",
-    sale: [30, 35, 50, 70, 20, 15, 30, 50, 710, 130, 20, 20]
-}, {
-    product: "笔记本",
-    region: "华南",
-    sale: [80, 120, 130, 140, 70, 75, 120, 90, 550, 120, 110, 100]
-}, {
-    product: "智能音箱",
-    region: "华东",
-    sale: [10, 30, 4, 5, 6, 5, 4, 5, 6, 5, 5, 25]
-}, {
-    product: "智能音箱",
-    region: "华北",
-    sale: [15, 50, 15, 15, 12, 11, 11, 12, 12, 14, 12, 40]
-}, {
-    product: "智能音箱",
-    region: "华南",
-    sale: [10, 40, 10, 6, 5, 6, 8, 6, 6, 6, 7, 26]
-}];
+    let sourceData = [{
+        product: "手机",
+        region: "华东",
+        sale: [120, 100, 140, 160, 180, 185, 190, 210, 230, 245, 255, 270]
+    }, {
+        product: "手机",
+        region: "华北",
+        sale: [80, 70, 90, 110, 130, 145, 150, 160, 170, 185, 190, 200]
+    }, {
+        product: "手机",
+        region: "华南",
+        sale: [220, 200, 240, 250, 260, 270, 280, 295, 310, 335, 355, 380]
+    }, {
+        product: "笔记本",
+        region: "华东",
+        sale: [50, 60, 80, 110, 30, 20, 70, 30, 420, 30, 20, 20]
+    }, {
+        product: "笔记本",
+        region: "华北",
+        sale: [30, 35, 50, 70, 20, 15, 30, 50, 710, 130, 20, 20]
+    }, {
+        product: "笔记本",
+        region: "华南",
+        sale: [80, 120, 130, 140, 70, 75, 120, 90, 550, 120, 110, 100]
+    }, {
+        product: "智能音箱",
+        region: "华东",
+        sale: [10, 30, 4, 5, 6, 5, 4, 5, 6, 5, 5, 25]
+    }, {
+        product: "智能音箱",
+        region: "华北",
+        sale: [15, 50, 15, 15, 12, 11, 11, 12, 12, 14, 12, 40]
+    }, {
+        product: "智能音箱",
+        region: "华南",
+        sale: [10, 40, 10, 6, 5, 6, 8, 6, 6, 6, 7, 26]
+    }];
 
-var con=document.getElementById('container'),
-    tab=document.getElementById('table'),
-    date=sourceData,
-    regionList=con.querySelector('div#region'),
-    productList=con.querySelector('div#product');
-    var table=document.createElement('table');
+    var con = document.getElementById('container'),
+        tab = document.getElementById('table'),
+        date = sourceData,
+        regionList = con.querySelector('div#region'),
+        productList = con.querySelector('div#product');
+    var table = document.createElement('table');
 
-                    tab.appendChild(table);
+    tab.appendChild(table);
 
-// checkbox 逻辑
+    // checkbox 逻辑
 
-function checkbox(){
-
-
-    regionList.onclick=function(e){
-        var that=e.target;
-        if(that.type==='checkbox'){
-
-            if(that.value==='全部'){
-                if(that.checked===true){
-
-                for(let i=1;i<regionList.childElementCount;i++){
-                    regionList.children[i].checked=true;
-                 }
-            }
-            else{
-              document.getElementById('region-all').checked=true;
-        }      
-    }
-        else{
-            var reg=regionList.getElementsByTagName('input'),
-                j=0;
-                
-            for( let i=1;i<reg.length;i++){
-                if(reg[i].checked) j++; 
-            }
-
-            if(j==0) that.checked=true;
-            else if(j>2) reg[0].checked=true;
-            else reg[0].checked=false;
-         
-        }
-    }
-}
-productList.onclick=function(e){
-    var that=e.target;
-    if(that.type==='checkbox'){
-
-        if(that.value==='全部'){
-            if(that.checked===true){
-
-            for(let i=1;i<productList.childElementCount;i++){
-                productList.children[i].checked=true;
-             }
-        }
-        else{
-          document.getElementById('product-all').checked=true;
-    }      
-}
-    else{
-        var reg=productList.getElementsByTagName('input'),
-            j=0;
-            
-        for( let i=1;i<reg.length;i++){
-            if(reg[i].checked) j++; 
-        }
-
-        if(j==0) that.checked=true;
-        else if(j>2) reg[0].checked=true;
-        else reg[0].checked=false;
-     
-    }
-}
-}
+    function checkbox() {
 
 
-}checkbox();
+        regionList.onclick = function (e) {
+            var that = e.target;
+            if (that.type === 'checkbox') {
 
-function TABLE(){
+                if (that.value === '全部') {
+                    if (that.checked === true) {
 
-    con.onclick=function(e){
-        var that=e.target;
-        if(that.type==='checkbox'){
-
-            //获取chekbox 选中数量
-            var left=con.firstElementChild,
-                right=con.lastElementChild,
-                regionNum=0,
-                productNum=0,
-                left_input=left.getElementsByTagName('input'),
-                right_input=right.getElementsByTagName('input'),
-                leftdateList=[],
-                rightdateList=[];
-                
-            for(let j=0;j<left_input.length;j++){
-                    if(left_input[j].checked){
-                        leftdateList.push(left_input[j]);
-                      regionNum++;
-                    }
-                }
-            for(let j=0;j<right_input.length;j++){
-                if(right_input[j].checked){
-                    rightdateList.push(right_input[j]);
-                  productNum++;
-                }
-            }
-            
-           console.log(regionNum,productNum);
-
-            // 获取对应渲染数据
-
-            function getDate(){
-               
-                var dateList=[];
-                for(let i=0;i<date.length;i++){
-                    for(let j=0;j<leftdateList.length;j++){
-                        for(let k=0;k<rightdateList.length;k++){
-                            if(date[i].region==leftdateList[j].value && date[i].product==rightdateList[k].value){
-
-                                dateList.push(date[i]);
-
-                                
-                            
-                            }
-                            
+                        for (let i = 1; i < regionList.childElementCount; i++) {
+                            regionList.children[i].checked = true;
                         }
                     }
-                }
-                
-                return dateList;
-            }
-            
-
-
-            // 渲染
-
-            function xuanran(){
-
-                //分三种情况，一种商品大于地区 ，一种地区大于商品，一种地区与商品都为一
-
-                //将前面获取的 region product 数量 代入用于 检测不同情况
-                var date=getDate();
-
-                
-                table.innerHTML='';
-                for(let i=0;i<date.length;i++){
-                    
-                
-               var tr=document.createElement('tr'),
-
-                    td=document.createElement('td'),
-
-                    text=date[i].region;
-
-                    td.textContent=text;
-
-                    tr.appendChild(td);
-
-                var td=document.createElement('td'),
-
-                    text=date[i].product;
-
-                    td.textContent=text;
-                    
-                    tr.appendChild(td);
-
-                    
-
-                    for( let j=0;j<date[i].sale.length;j++){
-
-                        var td=document.createElement('td'),
-
-                    text=date[i].sale[j];
-
-                    td.textContent=text;
-                    
-                    tr.appendChild(td);
-
+                    else {
+                        document.getElementById('region-all').checked = true;
                     }
-                    table.appendChild(tr);
                 }
-                
-            }xuanran();
+                else {
+                    var reg = regionList.getElementsByTagName('input'),
+                        j = 0;
+
+                    for (let i = 1; i < reg.length; i++) {
+                        if (reg[i].checked) j++;
+                    }
+
+                    if (j == 0) that.checked = true;
+                    else if (j > 2) reg[0].checked = true;
+                    else reg[0].checked = false;
+
+                }
+            }
+        }
+        productList.onclick = function (e) {
+            var that = e.target;
+            if (that.type === 'checkbox') {
+
+                if (that.value === '全部') {
+                    if (that.checked === true) {
+
+                        for (let i = 1; i < productList.childElementCount; i++) {
+                            productList.children[i].checked = true;
+                        }
+                    }
+                    else {
+                        document.getElementById('product-all').checked = true;
+                    }
+                }
+                else {
+                    var reg = productList.getElementsByTagName('input'),
+                        j = 0;
+
+                    for (let i = 1; i < reg.length; i++) {
+                        if (reg[i].checked) j++;
+                    }
+
+                    if (j == 0) that.checked = true;
+                    else if (j > 2) reg[0].checked = true;
+                    else reg[0].checked = false;
+
+                }
+            }
+        }
+
+
+    } checkbox();
+
+    function TABLE() {
+
+        con.onclick = function (e) {
+            var that = e.target;
+            if (that.type === 'checkbox') {
+
+                //获取chekbox 选中数量
+                var left = con.firstElementChild,
+                    right = con.lastElementChild,
+                    regionNum = 0,
+                    productNum = 0,
+                    left_input = left.getElementsByTagName('input'),
+                    right_input = right.getElementsByTagName('input'),
+                    leftdateList = [],
+                    rightdateList = [];
+
+                for (let j = 0; j < left_input.length; j++) {
+                    if (left_input[j].checked) {
+                        leftdateList.push(left_input[j]);
+                        regionNum++;
+                    }
+                }
+                for (let j = 0; j < right_input.length; j++) {
+                    if (right_input[j].checked) {
+                        rightdateList.push(right_input[j]);
+                        productNum++;
+                    }
+                }
+
+                console.log(regionNum, productNum);
+
+                // 获取对应渲染数据
+
+                function getDate() {
+
+                    var dateList = [];
+                    for (let i = 0; i < date.length; i++) {
+                        for (let j = 0; j < leftdateList.length; j++) {
+                            for (let k = 0; k < rightdateList.length; k++) {
+                                if (date[i].region == leftdateList[j].value && date[i].product == rightdateList[k].value) {
+
+                                    dateList.push(date[i]);
+
+
+
+                                }
+
+                            }
+                        }
+                    }
+
+                    return dateList;
+                }
+
+
+
+                // 渲染
+
+                function xuanran() {
+
+                    //分三种情况，一种商品大于地区 ，一种地区大于商品，一种地区与商品都为一
+
+                    //将前面获取的 region product 数量 代入用于 检测不同情况
+                    var date = getDate();
+
+
+                    table.innerHTML = '';
+                    for (let i = 0; i < date.length; i++) {
+
+
+                        var tr = document.createElement('tr'),
+
+                            td = document.createElement('td'),
+
+                            text = date[i].region;
+
+                        td.textContent = text;
+
+                        tr.appendChild(td);
+
+                        var td = document.createElement('td'),
+
+                            text = date[i].product;
+
+                        td.textContent = text;
+
+                        tr.appendChild(td);
+
+
+
+                        for (let j = 0; j < date[i].sale.length; j++) {
+
+                            var td = document.createElement('td'),
+
+                                text = date[i].sale[j];
+
+                            td.textContent = text;
+
+                            tr.appendChild(td);
+
+                        }
+                        table.appendChild(tr);
+                    }
+
+                } xuanran();
 
 
 
 
+            }
         }
     }
-}
     TABLE();
 </script>
+
 </html>

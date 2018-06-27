@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
 <head>
-    <meta charset="UTF-8">    
+    <meta charset="UTF-8">
     <title>IFE ECMAScript</title>
-    <link href="../favicon.ico" rel="shortcut icon"/>
+    <link href="../favicon.ico" rel="shortcut icon" />
 </head>
-<body> 
-	<!--二进制-->
+
+<body>
+    <!--二进制-->
     <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
     <input id="bin-bit" type="number" placeholder="输入转化后二进制数字位数">
     <button id="trans-btn">转化为二进制</button>
@@ -88,84 +90,85 @@
     </table>
     <hr>
     <script>
-    	var oNum = document.querySelector('#dec-number');
-    	var binBit = document.querySelector('#bin-bit');
-    	var tranBtn = document.querySelector('#trans-btn');
-    	var result = document.querySelector('#result');
-
-	
-		function dec2bin(dec,bit) {
-			//每次执行函数前，清空原来的值
-			arr = [];
-
-			//<!--不能为非负数-->
-			//dec<0检验输入的值是否为负数
-			//String(dec).indexOf(".")判断是否有小数点
-			if (dec < 0 || String(dec).indexOf(".") > -1) {
-				alert('不可以输入负数或非整数哦');
-			}else {
-				//根据0为false的Boolean特性，当dec不为0时执行下列代码
-				while (dec) {
-					//使用数组arr储存余数
-					arr.unshift( dec % 2);
-					//dec除以2，向下取整
-					dec = Math.floor(dec / 2);
-				}
-				//arr.join,即string的替换函数实现去除数组的，
-				if (bit && bit > arr.length) {
-					for ( var i=0; i< bit - arr.length; i++){
-						arr.unshift(0);
-					}
-				}
-				result.textContent = '运算结果' + arr.join('');
-			}
-		}
-		
-		// 实现党点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
-		// Some coding
-		tranBtn.addEventListener('click', function() {
-			dec2bin(oNum.value,binBit.value);
-		});
+        var oNum = document.querySelector('#dec-number');
+        var binBit = document.querySelector('#bin-bit');
+        var tranBtn = document.querySelector('#trans-btn');
+        var result = document.querySelector('#result');
 
 
-		//3的游戏
-		var oThree = document.querySelector('#game');
-		(function threeshow(){
-			arr1 = [];
-			for ( var i = 1;i < 100;i++) {
-				if (i % 3){
-					arr1.push(i);
-					//console.log(i);
-				} else if (String(i).indexOf('3')>-1) {
-					arr1.push('PA');
-					//console.log('PA');
-				} else {
-					arr1.push('PA');
-					//console.log('PA');
-				}
-			}
-			oThree.textContent = arr1;
-		})()
-		
-		//99
-		var oTab = document.querySelector('#Tabl');
-		var aTd = document.querySelectorAll('td');
-		for (var i=1, x=0;i<=9;i++){
-			for (var j=1;j<=i;j++){
-				aTd[x].textContent = j + '*' + i + '=' + i * j;
-				x++;
-			}
-		}
+        function dec2bin(dec, bit) {
+            //每次执行函数前，清空原来的值
+            arr = [];
 
-		//时间问候语
-		(function(){
-			var Now = (new Date()).getHours();
-	        if (Now >= 0 && Now < 12) {
-	            console.log('早上好啊，天气很不错哦');
-	        } else if (Now >= 18 && Now < 24) {
-	           console.log('晚上好，陪陪家人，早点休息');
-	        }
-		})()
+            //<!--不能为非负数-->
+            //dec<0检验输入的值是否为负数
+            //String(dec).indexOf(".")判断是否有小数点
+            if (dec < 0 || String(dec).indexOf(".") > -1) {
+                alert('不可以输入负数或非整数哦');
+            } else {
+                //根据0为false的Boolean特性，当dec不为0时执行下列代码
+                while (dec) {
+                    //使用数组arr储存余数
+                    arr.unshift(dec % 2);
+                    //dec除以2，向下取整
+                    dec = Math.floor(dec / 2);
+                }
+                //arr.join,即string的替换函数实现去除数组的，
+                if (bit && bit > arr.length) {
+                    for (var i = 0; i < bit - arr.length; i++) {
+                        arr.unshift(0);
+                    }
+                }
+                result.textContent = '运算结果' + arr.join('');
+            }
+        }
+
+        // 实现党点击转化按钮时，将输入的十进制数字转化为二进制，并显示在result的p标签内
+        // Some coding
+        tranBtn.addEventListener('click', function () {
+            dec2bin(oNum.value, binBit.value);
+        });
+
+
+        //3的游戏
+        var oThree = document.querySelector('#game');
+        (function threeshow() {
+            arr1 = [];
+            for (var i = 1; i < 100; i++) {
+                if (i % 3) {
+                    arr1.push(i);
+                    //console.log(i);
+                } else if (String(i).indexOf('3') > -1) {
+                    arr1.push('PA');
+                    //console.log('PA');
+                } else {
+                    arr1.push('PA');
+                    //console.log('PA');
+                }
+            }
+            oThree.textContent = arr1;
+        })()
+
+        //99
+        var oTab = document.querySelector('#Tabl');
+        var aTd = document.querySelectorAll('td');
+        for (var i = 1, x = 0; i <= 9; i++) {
+            for (var j = 1; j <= i; j++) {
+                aTd[x].textContent = j + '*' + i + '=' + i * j;
+                x++;
+            }
+        }
+
+        //时间问候语
+        (function () {
+            var Now = (new Date()).getHours();
+            if (Now >= 0 && Now < 12) {
+                console.log('早上好啊，天气很不错哦');
+            } else if (Now >= 18 && Now < 24) {
+                console.log('晚上好，陪陪家人，早点休息');
+            }
+        })()
     </script>
 </body>
+
 </html>
