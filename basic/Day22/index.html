@@ -53,7 +53,7 @@
 		document.getElementById("container").onclick = function (ev) {
 			var ev = ev || window.event;
 			var target = ev.target || ev.srcElement;
-			if (target.nodeName.toLowerCase() == 'button') {
+			if (target.nodeName.toLowerCase() === 'button') {
 				//获取当前的button对应下标
 				var aBtn = this.querySelectorAll("button");
 				btn_index = Array.prototype.indexOf.call(aBtn, target);
@@ -61,17 +61,18 @@
 				//index为0时（即点击第一个button时），只执行isNumber函数
 				if (btn_index == 0) {
 					isNumber();
-				} else if (btn_index == 1) {//index为1时，使用toFixed设置A的小数个数
-					oResult.innerHTML = parseFloat(numA.value).toFixed(parseFloat(numB.value));
-				} else if (btn_index == 2) {//index为2时，将isNumer返回的值，取绝对值后赋值给oResult
+				} else if (btn_index === 1) {//index为1时，使用toFixed设置A的小数个数
+					oResult.innerHTML = numB.value!=='undefined' ? parseFloat(numA.value).toFixed(parseFloat(numB.value)) : null;
+					//oResult.innerHTML = parseFloat(numA.value).toFixed(parseFloat(numB.value));
+				} else if (btn_index === 2) {//index为2时，将isNumer返回的值，取绝对值后赋值给oResult
 					oResult.innerHTML = Math.abs(isNumber());
-				} else if (btn_index == 3) {//index为3时，将isNumer返回的值，向上取整后赋值给oResult
+				} else if (btn_index === 3) {//index为3时，将isNumer返回的值，向上取整后赋值给oResult
 					oResult.innerHTML = Math.ceil(isNumber());
-				} else if (btn_index == 4) {//index为4时，将isNumer返回的值，向下取整后赋值给oResult
+				} else if (btn_index === 4) {//index为4时，将isNumer返回的值，向下取整后赋值给oResult
 					oResult.innerHTML = Math.floor(isNumber());
-				} else if (btn_index == 5) {//index为5时，将isNumer返回的值，取最近值取整后赋值给oResult
+				} else if (btn_index === 5) {//index为5时，将isNumer返回的值，取最近值取整后赋值给oResult
 					oResult.innerHTML = Math.round(isNumber());
-				} else if (btn_index == 6) {//index为6时，将A、B两者较大者赋值给oResult
+				} else if (btn_index === 6) {//index为6时，将A、B两者较大者赋值给oResult
 					oResult.innerHTML = Math.max(numA.value, numB.value);
 				} else {//将A、B两者较小者赋值给oResult
 					oResult.innerHTML = Math.min(numA.value, numB.value);
@@ -494,7 +495,7 @@
 		document.querySelector('#box6').onclick = function (ev) {
 			var ev = ev || window.event;
 			var target = ev.target || ev.srcElement;
-			if (target.nodeName.toLowerCase() == 'button') {
+			if (target.nodeName.toLowerCase() === 'button') {
 				var aBtn = document.querySelector('#box6').getElementsByTagName('button');
 				btn_index = Array.prototype.indexOf.call(aBtn, target);
 				if (btn_index == 0) {
@@ -509,15 +510,15 @@
 							stackCont.innerHTML = partTime;
 						}, 1000)
 					}
-				} else if (btn_index == 1) {
+				} else if (btn_index === 1) {
 					isshift ? stack.pop() : stack.shift();
 					stackCont.innerHTML = '栈内容：' + (isshift ? stack.join('->') : stack.join('<-'));
-				} else if (btn_index == 2) {
+				} else if (btn_index === 2) {
 					if (stack.length !== '') {
 						stackCont.innerHTML = stack.slice(stack.length - 1, stack.length);
 					}
-				} else if (btn_index == 3) {
-					if (stack.length == '') {
+				} else if (btn_index === 3) {
+					if (stack.length == 0) {
 						var partTime = stackCont.innerHTML;
 						stackCont.innerHTML = '空栈';
 						setTimeout(function () {
@@ -530,7 +531,7 @@
 							stackCont.innerHTML = partTime;
 						}, 1000)
 					}
-				} else if (btn_index == 4) {
+				} else if (btn_index === 4) {
 					aBtn[btn_index].innerHTML = isshift ? '传统栈' : '非传统栈';
 					isshift = !isshift;
 					return isshift;
@@ -596,18 +597,18 @@
 				value: 60
 			}
 		];
-
-		console.log(arr4.sort(function (a, b) {
-			var num1 = a.value;
-			var num2 = b.value;
-			if (num1 < num2) {
-				return -1;
-			}
-			if (num1 > num2) {
-				return 1;
-			}
-			return 0;
-		}))
+		console.log(arr7_4.sort((a,b)=>a.value-b.value))
+		// console.log(arr7_4.sort(function (a, b) {
+		// 	var num1 = a.value;
+		// 	var num2 = b.value;
+		// 	if (num1 < num2) {
+		// 		return -1;
+		// 	}
+		// 	if (num1 > num2) {
+		// 		return 1;
+		// 	}
+		// 	return 0;
+		// }))
 	//end
 	</script>
 	<!--end任务7-->
